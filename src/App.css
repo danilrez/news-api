@@ -9,7 +9,11 @@ body {
   margin: 0;
   overflow: hidden;
 
-  background-image: url('https://images.unsplash.com/photo-1614850715649-1d0106293bd1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxjb2xsZWN0aW9uLXBhZ2V8Mnw3ODIxMjN8fGVufDB8fHx8&w=1000&q=80');
+  /* dark */
+  background-image: url('https://i.redd.it/52f61nfzmwl51.jpg');
+  /* light */
+  background-image: url('https://www.teahub.io/photos/full/94-948093_abstract-wallpapers-1080p-for-free-wallpaper-abstract-orange.jpg');
+
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
