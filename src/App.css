@@ -9,12 +9,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   overflow: hidden;
-
-  /* dark */
-  background-image: url('https://i.redd.it/52f61nfzmwl51.jpg');
-  /* light */
-  background-image: url('https://www.teahub.io/photos/full/94-948093_abstract-wallpapers-1080p-for-free-wallpaper-abstract-orange.jpg');
-
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: fixed;
@@ -52,7 +46,7 @@ code {
   align-items: center;
   flex-direction: column;
   background: #f03;
-  color: #fff;
+  color: #eee;
 }
 
 .footer {
@@ -61,7 +55,7 @@ code {
   align-content: center;
   justify-content: center;
   align-items: center;
-  background: #232323;
-  color: #eee;
+  background: var(--bg-theme);
+  color: var(--text-color);
   transition: all 500ms linear;
 }

@@ -1,6 +1,6 @@
 .news_item_link {
   text-decoration: none;
-  color: #333;
+  color: var(--text-color);
 }
 
 .flex_layout {

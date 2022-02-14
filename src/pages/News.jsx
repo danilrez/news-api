@@ -20,7 +20,7 @@ export default function News(props) {
             alignItems: 'center',
             fontSize: '0.7rem',
           }}>
-          <em style={{ color: '#999' }}>{newsList.publishedAt}</em>
+          <em className="flex_layout_date">{newsList.publishedAt}</em>
           <BsTrash className="delete_icon" style={{ marginLeft: '1rem' }} />
         </span>
       </p>
@@ -34,10 +34,7 @@ export default function News(props) {
             borderRadius: '0.25rem',
           }}
         />
-        <p
-          style={{
-            marginLeft: '1rem',
-          }}>
+        <p style={{ marginLeft: '1rem' }}>
           {newsList.content}
           <br />
           <a href={newsList.url}>original source</a>
