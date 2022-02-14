@@ -1,3 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  overflow: hidden;
+
+  /* dark */
+  background-image: url('https://i.redd.it/52f61nfzmwl51.jpg');
+  /* light */
+  background-image: url('https://www.teahub.io/photos/full/94-948093_abstract-wallpapers-1080p-for-free-wallpaper-abstract-orange.jpg');
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  transition: background-image 500ms linear;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
 .grid_layout {
   display: grid;
   grid-template-areas:

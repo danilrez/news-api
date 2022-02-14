@@ -18,6 +18,7 @@ export default function NewsItem(props) {
                 width: '6.25rem',
                 height: '4.1rem',
                 borderRadius: '0.25rem',
+                transition: 'all 300ms ease',
               }}
             />
             <span
