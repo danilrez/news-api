@@ -34,11 +34,20 @@ export default function News(props) {
             borderRadius: '0.25rem',
           }}
         />
-        <p style={{ marginLeft: '1rem' }}>
-          {newsList.content}
-          <br />
-          <a href={newsList.url}>original source</a>
-        </p>
+        <div style={{ marginLeft: '1rem' }}>
+          <p style={{ marginBlockStart: '0' }}>{newsList.content}</p>
+          <a
+            style={{
+              color: '#2b93e9',
+              fontWeight: '500',
+              fontStyle: 'italic',
+              cursor: 'pointer',
+              textDecoration: 'none',
+            }}
+            href={newsList.url}>
+            Ссылка на источник
+          </a>
+        </div>
       </div>
     </div>
   );

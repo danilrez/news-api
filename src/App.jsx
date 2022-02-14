@@ -15,11 +15,7 @@ import './App.css';
 
 import Loader from './components/loader/Loader';
 
-let count = 0;
-
 export default function App() {
-  count++;
-
   let statusOK, statusError;
   const [news, setNews] = React.useState([]);
   const { status, code, message, articles } = news;
@@ -44,8 +40,9 @@ export default function App() {
     // }, 1000);
   }, []);
 
-  if (articles && count <= 3) {
+  if (articles) {
     articles.forEach((el) => {
+      // FIXME: in the StrictMode incorrect works
       el.publishedAt = dateConverter(el.publishedAt);
     });
   }
