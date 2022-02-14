@@ -1,0 +1,24 @@
+.news_item_link {
+  text-decoration: none;
+  color: #333;
+}
+
+.flex_layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1rem;
+}
+
+.flex_layout_title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.flex_layout_date {
+  font-size: 0.7rem;
+  min-width: 6.5rem;
+  text-align: end;
+  color: #999;
+}

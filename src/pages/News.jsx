@@ -1,29 +1,48 @@
 import React from 'react';
-import './App.css';
+import { BsTrash } from 'react-icons/bs';
 
-function App() {
+export default function News(props) {
+  const { newsList } = props;
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <nav>
-          <ul>
-            <li>News</li>
-            <li>NewsItem</li>
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <div className="content">
-          <h1>title</h1>
-          <p>description</p>
-          <p>author</p>
-          <p>url</p>
-          <p>publishedAt</p>
-          <p>content</p>
-        </div>
-      </main>
+    <div>
+      <p
+        style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+        }}>
+        <strong style={{ fontSize: '1.5rem' }}> {newsList.title}</strong>
+        <span
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            fontSize: '0.7rem',
+          }}>
+          <em style={{ color: '#999' }}>{newsList.publishedAt}</em>
+          <BsTrash className="delete_icon" style={{ marginLeft: '1rem' }} />
+        </span>
+      </p>
+
+      <div style={{ display: 'flex' }}>
+        <img
+          src={newsList.urlToImage}
+          alt="preview"
+          style={{
+            width: '300px',
+            borderRadius: '0.25rem',
+          }}
+        />
+        <p
+          style={{
+            marginLeft: '1rem',
+          }}>
+          {newsList.content}
+          <br />
+          <a href={newsList.url}>original source</a>
+        </p>
+      </div>
     </div>
   );
 }
-
-export default App;
