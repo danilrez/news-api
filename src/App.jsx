@@ -19,7 +19,8 @@ export default function App() {
     const fetchedData = async () => {
       setNews(await fetchData());
     };
-    fetchedData();
+
+    setTimeout(() => fetchedData(), 1000);
 
     // For testing error status
     // setTimeout(() => {
