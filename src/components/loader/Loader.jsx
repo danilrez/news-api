@@ -1,17 +1,15 @@
 import React from 'react';
-
+import { useSelector } from 'react-redux';
 import './Loader.css';
 
 export default function Loader() {
+  const loader = useSelector((state) => state.loadReducer.loading);
+
   return (
-    <div className="loader">
-      <div className="loader-div">
-        <div className="loading-blocks">
-          <div></div>
-          <div></div>
-          <div></div>
-        </div>
-      </div>
+    <div className="loading-blocks">
+      <div hidden={loader}></div>
+      <div hidden={loader}></div>
+      <div hidden={loader}></div>
     </div>
   );
 }

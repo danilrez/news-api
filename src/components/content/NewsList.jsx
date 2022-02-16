@@ -1,10 +1,10 @@
 import React from 'react';
-import NewsItem from '../components/content/newsItem/NewsItem';
+import NewsItem from './newsItem/NewsItem';
 
-export default function Home(props) {
+export default function NewsList({ newsList }) {
   return (
     <ul className="content__items">
-      {props.newsList.map((newsItem, i) => {
+      {newsList.map((newsItem, i) => {
         const { id, name } = newsItem.source;
         return (
           <NewsItem

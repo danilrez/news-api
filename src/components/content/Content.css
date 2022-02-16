@@ -36,7 +36,7 @@
 }
 
 .content__items > li,
-.content > div {
+.content__newsItem {
   background: var(--bg-theme);
   padding: 0.1rem 1rem;
   border-radius: 0.5rem;
@@ -49,6 +49,9 @@
 }
 
 .delete_icon {
+  position: relative;
+  top: 0.5rem;
+  left: 0.5rem;
   border-radius: 50%;
   padding: 0.25rem;
   width: 1.5rem;

@@ -33,6 +33,7 @@ export const GlobalStyles = createGlobalStyle`
   :root{
 	--bg-hover: #e0e0e020;
   --bg-hover-items: ${({ theme }) => theme.bgHoverItems};
+  --bg-hover-drop: ${({ theme }) => theme.bgHoverDrop};
   --bg-theme: ${({ theme }) => theme.bgTheme};
   --text-color: ${({ theme }) => theme.textColor};
   --bg-content:${({ theme }) => theme.bgContent};
@@ -43,7 +44,7 @@ export const GlobalStyles = createGlobalStyle`
 export const DarkMode = {
   bgImage: `url('https://i.redd.it/52f61nfzmwl51.jpg')`,
   bgTheme: '#323335',
-  bgHoverItems: '#323335b0',
+  bgHoverItems: '#45464f90',
   bgContent: '#32333550',
   bgDelete: '#f5f6ffc0',
   bgHoverDrop: '#55565f',

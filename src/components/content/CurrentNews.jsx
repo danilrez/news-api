@@ -1,11 +1,10 @@
 import React from 'react';
-import { BsTrash } from 'react-icons/bs';
 
-export default function News(props) {
+export default function CurrentNews(props) {
   const { newsList } = props;
 
   return (
-    <div>
+    <div className="content__newsItem">
       <p
         style={{
           display: 'flex',
@@ -21,7 +20,6 @@ export default function News(props) {
             fontSize: '0.7rem',
           }}>
           <em className="flex_layout_date">{newsList.publishedAt}</em>
-          <BsTrash className="delete_icon" style={{ marginLeft: '1rem' }} />
         </span>
       </p>
 
