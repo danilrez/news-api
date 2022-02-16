@@ -9,8 +9,6 @@ export default function Content(props) {
   const location = useLocation();
   const newsList = useSelector((state) => state.newsReducer.news);
 
-  console.log('newsList > ', newsList);
-
   return (
     <Routes location={location} key={location.pathname}>
       <Route index path="/" element={<NewsList newsList={newsList} />} />

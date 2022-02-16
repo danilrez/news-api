@@ -20,8 +20,6 @@ export const loaderOff = () => {
 };
 
 export const errorOn = (msg) => {
-  console.log('errorOn > ', msg);
-
   return (dispatch) => {
     dispatch({
       type: ERROR_ON,
@@ -59,7 +57,6 @@ export const fetchNews = () => {
         dispatch(loaderOff());
       }, 1500);
     } catch (err) {
-      console.log(err);
       dispatch(errorOn(`Ошибка API: ${err.message}`));
       dispatch(loaderOff());
     }

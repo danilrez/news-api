@@ -18,10 +18,7 @@ export const newsReducer = (state = initialState, action) => {
       const { title } = action;
       const { news } = state;
       const itemIndex = news.findIndex((res) => res.title === title);
-
       const nextComments = [...news.slice(0, itemIndex), ...news.slice(itemIndex + 1)];
-
-      console.log('nextComments > ', nextComments);
 
       return {
         ...state,
