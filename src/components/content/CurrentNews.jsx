@@ -1,7 +1,19 @@
 import React from 'react';
+import { newsDelete } from '../../redux/action';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { BsTrash } from 'react-icons/bs';
 
 export default function CurrentNews(props) {
   const { newsList } = props;
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleDelete = (e) => {
+    e.preventDefault();
+    dispatch(newsDelete(newsList.title));
+    navigate('/');
+  };
 
   return (
     <div className="content__newsItem">
@@ -20,6 +32,7 @@ export default function CurrentNews(props) {
             fontSize: '0.7rem',
           }}>
           <em className="flex_layout_date">{newsList.publishedAt}</em>
+          <BsTrash className="delete_icon_news" onClick={handleDelete} />
         </span>
       </p>
 

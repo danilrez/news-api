@@ -1,20 +1,10 @@
 import React from 'react';
 import '../../../App.css';
 import './NewsItem.css';
-import { BsTrash } from 'react-icons/bs';
 import { NavLink } from 'react-router-dom';
 
-import { newsDelete } from '../../../redux/action';
-import { useDispatch } from 'react-redux';
-
 export default function NewsItem(props) {
-  const dispatch = useDispatch();
   const { title, publishedAt, description, urlToImage } = props.newsItem;
-
-  const handleDelete = (e) => {
-    e.preventDefault();
-    dispatch(newsDelete(title));
-  };
 
   return (
     <li style={{ margin: '0.5rem', display: 'flex' }}>
@@ -47,7 +37,6 @@ export default function NewsItem(props) {
         </div>
         <p style={{ textAlign: 'justify', wordBreak: 'break-word' }}>{description} </p>
       </NavLink>
-      <BsTrash className="delete_icon" onClick={handleDelete} />
     </li>
   );
 }

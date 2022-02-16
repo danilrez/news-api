@@ -20,7 +20,6 @@ export const loaderOff = () => {
 };
 
 export const errorOn = (msg) => {
-  console.log(msg);
   return (dispatch) => {
     dispatch({
       type: ERROR_ON,

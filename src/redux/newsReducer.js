@@ -18,11 +18,11 @@ export const newsReducer = (state = initialState, action) => {
       const { title } = action;
       const { news } = state;
       const itemIndex = news.findIndex((res) => res.title === title);
-      const nextComments = [...news.slice(0, itemIndex), ...news.slice(itemIndex + 1)];
+      const nextNews = [...news.slice(0, itemIndex), ...news.slice(itemIndex + 1)];
 
       return {
         ...state,
-        news: nextComments,
+        news: nextNews,
       };
 
     default:
