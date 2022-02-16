@@ -6,6 +6,7 @@ import {
   ERROR_OFF,
   DELETE_NEWS,
 } from './types';
+import uniqid from 'uniqid';
 
 export const loaderOn = () => {
   return {
@@ -48,6 +49,7 @@ export const fetchNews = () => {
 
     try {
       const response = await fetch(URL).then((res) => res.json());
+      response.articles.forEach((el) => (el.id = uniqid()));
 
       setTimeout(() => {
         dispatch({
@@ -57,15 +59,15 @@ export const fetchNews = () => {
         dispatch(loaderOff());
       }, 1500);
     } catch (err) {
-      dispatch(errorOn(`Ошибка API: ${err.message}`));
+      dispatch(errorOn(`Ошибка: ${err.message}`));
       dispatch(loaderOff());
     }
   };
 };
 
-export const newsDelete = (title) => {
+export const newsDelete = (id) => {
   return {
     type: DELETE_NEWS,
-    title: title,
+    id: id,
   };
 };

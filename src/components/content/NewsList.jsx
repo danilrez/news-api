@@ -5,11 +5,10 @@ export default function NewsList({ newsList }) {
   return (
     <ul className="content__items">
       {newsList.map((newsItem, i) => {
-        const { id, name } = newsItem.source;
         return (
           <NewsItem
             url={newsItem.title}
-            key={`${i}_${!!id ? id : 'empty'}_${!!name ? name : 'empty'}`}
+            key={`${i}_${newsItem.id}`}
             newsItem={newsItem}
           />
         );

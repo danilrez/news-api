@@ -15,9 +15,9 @@ export const newsReducer = (state = initialState, action) => {
       };
 
     case DELETE_NEWS:
-      const { title } = action;
+      const { id } = action;
       const { news } = state;
-      const itemIndex = news.findIndex((res) => res.title === title);
+      const itemIndex = news.findIndex((res) => res.id === id);
       const nextNews = [...news.slice(0, itemIndex), ...news.slice(itemIndex + 1)];
 
       return {
