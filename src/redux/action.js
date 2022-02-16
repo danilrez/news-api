@@ -20,6 +20,7 @@ export const loaderOff = () => {
 };
 
 export const errorOn = (msg) => {
+  console.log(msg);
   return (dispatch) => {
     dispatch({
       type: ERROR_ON,
@@ -27,7 +28,7 @@ export const errorOn = (msg) => {
     });
     setTimeout(() => {
       dispatch(errorOff());
-    }, 3000);
+    }, 5000);
   };
 };
 

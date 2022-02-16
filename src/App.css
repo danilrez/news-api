@@ -41,12 +41,25 @@ code {
 
 .status_error {
   display: flex;
-  width: 100%;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  position: absolute;
+  top: 50%;
+  padding: 2rem;
+  border-radius: 0.5rem;
   background: #f03;
   color: #eee;
+  z-index: 9999;
+  animation: 1000ms infinite alternate error;
+}
+
+@keyframes error {
+  from {
+    transform: scale(1);
+    background: #f03;
+  }
+  to {
+    transform: scale(1.2);
+    background: #e02;
+  }
 }
 
 .footer {

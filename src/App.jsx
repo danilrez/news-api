@@ -19,7 +19,8 @@ import './App.css';
 
 export default function App() {
   const dispatch = useDispatch();
-  const status = useSelector((state) => !!state.newsReducer.status);
+  const status = useSelector((state) => state.newsReducer.status);
+  const error = useSelector((state) => state.loadReducer.error);
 
   const [theme, toggleTheme] = useDarkMode();
   const themeMode = theme === 'light' ? LightMode : DarkMode;
@@ -36,12 +37,10 @@ export default function App() {
           <GlobalStyles />
           <Header />
           <main className="main">
+            {error && <div className="status_error">{error}</div>}
             <div className="content">
               <Loader />
-              {
-                // TODO: show errors
-                status && <Content />
-              }
+              {!!status && <Content />}
             </div>
           </main>
           <footer className="footer">footer</footer>
