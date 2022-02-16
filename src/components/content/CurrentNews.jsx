@@ -11,7 +11,7 @@ export default function CurrentNews(props) {
 
   const handleDelete = (e) => {
     e.preventDefault();
-    dispatch(newsDelete(newsList.title));
+    dispatch(newsDelete(newsList.id));
     navigate('/');
   };
 
