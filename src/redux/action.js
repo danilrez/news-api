@@ -6,7 +6,9 @@ import {
   ERROR_OFF,
   DELETE_NEWS,
 } from './types';
+import axios from 'axios';
 import uniqid from 'uniqid';
+import { dateConverter } from '../support';
 
 export const loaderOn = () => {
   return {
@@ -44,17 +46,19 @@ export const fetchNews = () => {
       _apiKey = '0d7c2e234e124716a93239d86d69fec1', // not secure. better way is using github secrets
       _keywords = 'education',
       _sortBy = 'popularity';
-
     const URL = `${_apiURL}?q=${_keywords}&sortBy=${_sortBy}&apiKey=${_apiKey}`;
 
     try {
-      const response = await fetch(URL).then((res) => res.json());
-      response.articles.forEach((el) => (el.id = uniqid()));
+      const { data } = await axios.get(URL);
+      data.articles.forEach((el) => {
+        el.id = uniqid();
+        el.publishedAt = dateConverter(el.publishedAt);
+      });
 
       setTimeout(() => {
         dispatch({
           type: FETCH_NEWS,
-          data: response,
+          data: data,
         });
         dispatch(loaderOff());
       }, 1500);
