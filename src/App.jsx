@@ -15,6 +15,7 @@ import {
   LightMode,
   DarkMode,
 } from './GlobalStyles/GlobalStyles';
+import { FaGithub, FaLinkedin, FaTelegram } from 'react-icons/fa';
 import './App.css';
 
 export default function App() {
@@ -43,7 +44,27 @@ export default function App() {
               {!!status && <Content />}
             </div>
           </main>
-          <footer className="footer">footer</footer>
+          <footer className="footer">
+            {' '}
+            <div className="footer_author">
+              Authored by © <b>Danil Reznichenko</b>
+            </div>
+            <div className="footer_links">
+              <a
+                className="footer_links_icons gh"
+                href="https://github.com/CrappyCodeMaker">
+                <FaGithub />
+              </a>
+              <a
+                className="footer_links_icons li"
+                href="https://www.linkedin.com/in/reznida/">
+                <FaLinkedin />
+              </a>
+              <a className="footer_links_icons tg" href="https://t.me/reznida">
+                <FaTelegram />
+              </a>
+            </div>
+          </footer>
         </div>
       </ThemeProvider>
     </ThemeContext.Provider>
